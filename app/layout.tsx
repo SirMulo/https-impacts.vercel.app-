@@ -1,0 +1,133 @@
+import type React from "react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from "lucide-react"
+import { Toaster } from "@/components/ui/toaster"
+import "@/styles/globals.css"
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className="flex flex-col min-h-screen">
+        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="container flex h-16 items-center justify-between">
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="font-serif text-2xl font-bold text-blue-600">EthoLight</span>
+            </Link>
+            <nav className="hidden md:flex gap-6">
+              <Link href="/stories" className="text-sm font-medium hover:text-blue-600">
+                Stories
+              </Link>
+              <Link href="/research" className="text-sm font-medium hover:text-blue-600">
+                Research
+              </Link>
+              <Link href="/impact" className="text-sm font-medium hover:text-blue-600">
+                Impact
+              </Link>
+              <Link href="/join-the-fight" className="text-sm font-medium hover:text-blue-600">
+                Join the Fight
+              </Link>
+            </nav>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="flex flex-col gap-4">
+                  <Link href="/stories" className="text-lg font-medium">
+                    Stories
+                  </Link>
+                  <Link href="/research" className="text-lg font-medium">
+                    Research
+                  </Link>
+                  <Link href="/impact" className="text-lg font-medium">
+                    Impact
+                  </Link>
+                  <Link href="/join-the-fight" className="text-lg font-medium">
+                    Join the Fight
+                  </Link>
+                  <Link href="/share-your-story" className="text-lg font-medium">
+                    Share Your Story
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+            <div className="hidden md:flex items-center gap-4">
+              <Button variant="ghost" asChild>
+                <Link href="/share-your-story">Share Your Story</Link>
+              </Button>
+              <Button className="bg-blue-600 hover:bg-blue-700" asChild>
+                <Link href="/join-the-fight">Join the Fight</Link>
+              </Button>
+            </div>
+          </div>
+        </header>
+        {children}
+        <footer className="bg-slate-900 text-white mt-auto">
+          <div className="container py-12">
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="md:col-span-2">
+                <Link href="/" className="inline-block mb-4">
+                  <span className="font-serif text-2xl font-bold">EthoLight</span>
+                </Link>
+                <p className="text-slate-400 max-w-md">
+                  Fighting for recognition and justice for skilled immigrants in Norway. Join us in challenging the
+                  system and creating change.
+                </p>
+              </div>
+              {[
+                {
+                  title: "Quick Links",
+                  links: ["Stories", "Research", "Impact", "Join the Fight"],
+                },
+                {
+                  title: "Resources",
+                  links: ["About Us", "Contact", "Press", "Partners"],
+                },
+              ].map((section, i) => (
+                <div key={i}>
+                  <h3 className="font-bold mb-4">{section.title}</h3>
+                  <ul className="space-y-2">
+                    {section.links.map((link, j) => (
+                      <li key={j}>
+                        <Link href="#" className="text-slate-400 hover:text-white">
+                          {link}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border-t border-slate-800">
+            <div className="container flex flex-col sm:flex-row justify-between items-center py-6">
+              <p className="text-slate-400">© {new Date().getFullYear()} EthoLight. All rights reserved.</p>
+              <div className="flex gap-4 mt-4 sm:mt-0">
+                <Link href="#" className="text-slate-400 hover:text-white">
+                  Privacy
+                </Link>
+                <Link href="#" className="text-slate-400 hover:text-white">
+                  Terms
+                </Link>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+
+export const metadata = {
+      generator: 'v0.app'
+    };
