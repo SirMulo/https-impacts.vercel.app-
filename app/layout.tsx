@@ -24,7 +24,7 @@ const quickLinks = [
   { label: "Stories", href: "/stories" },
   { label: "Research", href: "/research" },
   { label: "Impact", href: "/impact" },
-  { label: "Join the Fight", href: "/join-the-fight" },
+  { label: "Join the Solution", href: "/join-the-fight" },
 ]
 
 const resourceLinks = [
@@ -58,7 +58,7 @@ export default function RootLayout({
                 Impact
               </Link>
               <Link href="/join-the-fight" className="text-sm font-medium hover:text-blue-600">
-                Join the Fight
+                Join the Solution
               </Link>
             </nav>
             <Sheet>
@@ -80,7 +80,7 @@ export default function RootLayout({
                     Impact
                   </Link>
                   <Link href="/join-the-fight" className="text-lg font-medium">
-                    Join the Fight
+                    Join the Solution
                   </Link>
                   <Link href="/share-your-story" className="text-lg font-medium">
                     Share Your Story
@@ -93,7 +93,7 @@ export default function RootLayout({
                 <Link href="/share-your-story">Share Your Story</Link>
               </Button>
               <Button className="bg-blue-600 hover:bg-blue-700" asChild>
-                <Link href="/join-the-fight">Join the Fight</Link>
+                <Link href="/join-the-fight">Join the Solution</Link>
               </Button>
             </div>
           </div>

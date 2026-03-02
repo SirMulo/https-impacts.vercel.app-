@@ -194,7 +194,7 @@ export default function ResearchPage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Join the Fight for Recognition
+              Join the Solution
             </Button>
             <Button size="lg" variant="outline" className="text-white border-white hover:bg-blue-700">
               <Download className="mr-2 h-5 w-5" /> Download Full Report

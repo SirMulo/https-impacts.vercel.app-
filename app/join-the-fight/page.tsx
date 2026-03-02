@@ -42,7 +42,7 @@ export default function JoinTheFightPage() {
 
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Here's How You Can Join the Fight</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Here's How You Can Join the Solution</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ActionCard
               title="Sign the Petition"

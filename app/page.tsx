@@ -31,7 +31,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
-                Join the Fight for Recognition
+                Join the Solution
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
@@ -192,7 +192,7 @@ export default function Home() {
               <Badge variant="outline" className="border-white text-white mb-6">
                 Take Action
               </Badge>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Join the Fight for Recognition</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Join the Solution</h2>
               <p className="text-xl text-white/80 mb-8">
                 Every story shared, every voice raised brings us closer to changing the system. Together, we can create
                 a Norway that recognizes and values all talent.
