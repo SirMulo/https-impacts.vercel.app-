@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -68,22 +67,29 @@ export default function ResearchPage() {
                   <CardTitle>Economic Consequences of Underemployment</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Image
-                    src="/placeholder.svg?height=300&width=600"
-                    alt="Economic impact chart"
-                    width={600}
-                    height={300}
-                    className="mb-4 rounded-lg"
-                  />
-                  <p>
+                  <p className="mb-4">
                     Our research shows that underemployment of skilled immigrants costs Norway an estimated 2.8 billion
-                    NOK annually in lost productivity and tax revenue.
+                    NOK annually in lost productivity and tax revenue. The ripple effects extend beyond individual households into national GDP growth, innovation output, and international competitiveness.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline">Read Full Study</Button>
                 </CardFooter>
               </Card>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ResearchItem
+                  title="The Fiscal Cost of Credential Non-Recognition"
+                  excerpt="Quantifying the tax revenue lost when qualified professionals are forced into low-skill employment."
+                  author="Dr. Lars Henriksen"
+                  date="March 2024"
+                />
+                <ResearchItem
+                  title="Immigrant Entrepreneurship and Economic Growth"
+                  excerpt="How removing barriers to professional recognition could unlock a new wave of immigrant-led businesses in Norway."
+                  author="Prof. Ingrid Bakke"
+                  date="January 2024"
+                />
+              </div>
             </TabsContent>
             <TabsContent value="policy" className="space-y-8">
               <Card>
@@ -91,22 +97,29 @@ export default function ResearchPage() {
                   <CardTitle>Evaluation of Current Integration Policies</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Image
-                    src="/placeholder.svg?height=300&width=600"
-                    alt="Policy effectiveness chart"
-                    width={600}
-                    height={300}
-                    className="mb-4 rounded-lg"
-                  />
-                  <p>
+                  <p className="mb-4">
                     Analysis of Norway's current integration policies reveals significant gaps in addressing the unique
-                    challenges faced by highly skilled immigrants in the labor market.
+                    challenges faced by highly skilled immigrants in the labor market. Comparative studies with Denmark and Canada show that streamlined credential recognition processes can cut reintegration time by up to 60%.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline">Read Full Analysis</Button>
                 </CardFooter>
               </Card>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ResearchItem
+                  title="Fast-Track Models: Lessons from Canada and Germany"
+                  excerpt="Examining how other nations have successfully accelerated immigrant credential recognition."
+                  author="Dr. Kristin Aas"
+                  date="February 2024"
+                />
+                <ResearchItem
+                  title="Municipal vs. National Policy: Where Reform Happens Fastest"
+                  excerpt="A comparative look at local integration initiatives and their outsized impact on employment outcomes."
+                  author="Prof. Henrik Dahl"
+                  date="December 2023"
+                />
+              </div>
             </TabsContent>
             <TabsContent value="human" className="space-y-8">
               <Card>
@@ -114,22 +127,29 @@ export default function ResearchPage() {
                   <CardTitle>Psychological Impact of Professional Displacement</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Image
-                    src="/placeholder.svg?height=300&width=600"
-                    alt="Mental health impact chart"
-                    width={600}
-                    height={300}
-                    className="mb-4 rounded-lg"
-                  />
-                  <p>
+                  <p className="mb-4">
                     Our study finds that prolonged underemployment leads to significant mental health challenges,
-                    including depression and anxiety, among skilled immigrants in Norway.
+                    including depression, anxiety, and erosion of professional identity among skilled immigrants in Norway. Over 60% of respondents reported a decline in self-worth directly tied to their inability to practice their profession.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline">Read Full Report</Button>
                 </CardFooter>
               </Card>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ResearchItem
+                  title="Identity Loss and Recovery Among Displaced Professionals"
+                  excerpt="Qualitative research into how skilled immigrants rebuild professional identity after years of underemployment."
+                  author="Dr. Amina Yusuf"
+                  date="November 2023"
+                />
+                <ResearchItem
+                  title="Family and Community Impact of Skilled Immigrant Underemployment"
+                  excerpt="How the effects of professional displacement extend beyond the individual to families and wider immigrant communities."
+                  author="Prof. Ragnhild Solheim"
+                  date="October 2023"
+                />
+              </div>
             </TabsContent>
           </Tabs>
         </div>
@@ -214,4 +234,3 @@ export default function ResearchPage() {
     </main>
   )
 }
-

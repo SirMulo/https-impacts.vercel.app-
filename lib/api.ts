@@ -257,4 +257,3 @@ export async function getStoryBySlug(slug: string): Promise<Story | undefined> {
 
   return stories.find((story) => story.slug === slug)
 }
-

@@ -34,4 +34,3 @@ export default function SuccessStory({ image, title, quote, name, role }: Succes
     </Card>
   )
 }
-

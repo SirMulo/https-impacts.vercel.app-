@@ -51,14 +51,16 @@ export default function StorySubmissionForm() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Here you would typically send the form data to your backend
-    console.log(values)
-    setIsSubmitted(true)
     toast({
-      title: "Story submitted successfully",
+      title: "Thank you -- your story has been received",
       description:
-        "Thank you for sharing your story. It will be reviewed and published to help raise awareness and inspire others.",
+        "Your story will be reviewed and published to help raise awareness and inspire others.",
     })
+    form.reset()
+    setIsSubmitted(true)
+    setTimeout(() => {
+      router.push("/")
+    }, 2000)
   }
 
   if (isSubmitted) {
@@ -166,4 +168,3 @@ export default function StorySubmissionForm() {
     </Form>
   )
 }
-

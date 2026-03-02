@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { ArrowRight, ChevronRight, ChevronLeft } from "lucide-react"
 import { getStories } from "@/lib/api"
+import StoryFilters from "@/components/story-filters"
 
 export default async function StoriesPage() {
   const stories = await getStories(1, 6)
@@ -58,11 +59,7 @@ export default async function StoriesPage() {
               <Badge className="bg-blue-600 text-white mb-4">All Stories</Badge>
               <h2 className="font-serif text-3xl font-bold">Voices of Change</h2>
             </div>
-            <div className="flex gap-2">
-              <Button variant="outline">Latest</Button>
-              <Button variant="outline">Most Read</Button>
-              <Button variant="outline">By Category</Button>
-            </div>
+            <StoryFilters />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,4 +102,3 @@ export default async function StoriesPage() {
     </main>
   )
 }
-

@@ -1,10 +1,38 @@
 import type React from "react"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.css"
+
+export const metadata: Metadata = {
+  title: "EthoLight — Advocating for Skilled Immigrants in Norway",
+  description:
+    "EthoLight challenges the systemic underemployment of highly educated immigrants in Norway through storytelling, research, and advocacy.",
+  openGraph: {
+    title: "EthoLight — Advocating for Skilled Immigrants in Norway",
+    description:
+      "EthoLight challenges the systemic underemployment of highly educated immigrants in Norway through storytelling, research, and advocacy.",
+  },
+    generator: 'v0.app'
+}
+
+const quickLinks = [
+  { label: "Stories", href: "/stories" },
+  { label: "Research", href: "/research" },
+  { label: "Impact", href: "/impact" },
+  { label: "Join the Fight", href: "/join-the-fight" },
+]
+
+const resourceLinks = [
+  { label: "About Us", href: "/" },
+  { label: "Contact", href: "mailto:hello@ethorise.no" },
+  { label: "Press", href: "/" },
+  { label: "Partners", href: "/impact" },
+]
 
 export default function RootLayout({
   children,
@@ -83,39 +111,40 @@ export default function RootLayout({
                   system and creating change.
                 </p>
               </div>
-              {[
-                {
-                  title: "Quick Links",
-                  links: ["Stories", "Research", "Impact", "Join the Fight"],
-                },
-                {
-                  title: "Resources",
-                  links: ["About Us", "Contact", "Press", "Partners"],
-                },
-              ].map((section, i) => (
-                <div key={i}>
-                  <h3 className="font-bold mb-4">{section.title}</h3>
-                  <ul className="space-y-2">
-                    {section.links.map((link, j) => (
-                      <li key={j}>
-                        <Link href="#" className="text-slate-400 hover:text-white">
-                          {link}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <div>
+                <h3 className="font-bold mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  {quickLinks.map((link, j) => (
+                    <li key={j}>
+                      <Link href={link.href} className="text-slate-400 hover:text-white">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold mb-4">Resources</h3>
+                <ul className="space-y-2">
+                  {resourceLinks.map((link, j) => (
+                    <li key={j}>
+                      <Link href={link.href} className="text-slate-400 hover:text-white">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           <div className="border-t border-slate-800">
             <div className="container flex flex-col sm:flex-row justify-between items-center py-6">
               <p className="text-slate-400">© {new Date().getFullYear()} EthoLight. All rights reserved.</p>
               <div className="flex gap-4 mt-4 sm:mt-0">
-                <Link href="#" className="text-slate-400 hover:text-white">
+                <Link href="/" className="text-slate-400 hover:text-white">
                   Privacy
                 </Link>
-                <Link href="#" className="text-slate-400 hover:text-white">
+                <Link href="/" className="text-slate-400 hover:text-white">
                   Terms
                 </Link>
               </div>
@@ -123,11 +152,8 @@ export default function RootLayout({
           </div>
         </footer>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
 }
-
-export const metadata = {
-      generator: 'v0.app'
-    };

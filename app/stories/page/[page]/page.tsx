@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { ChevronRight, ChevronLeft } from "lucide-react"
 import { getStories } from "@/lib/api"
+import StoryFilters from "@/components/story-filters"
 
 export default async function StoriesPage({ params }: { params: { page: string } }) {
   const page = Number.parseInt(params.page, 10)
@@ -28,15 +29,19 @@ export default async function StoriesPage({ params }: { params: { page: string }
               <Badge className="bg-blue-600 text-white mb-4">All Stories</Badge>
               <h2 className="font-serif text-3xl font-bold">Voices of Change - Page {page}</h2>
             </div>
-            <div className="flex gap-2">
-              <Button variant="outline">Latest</Button>
-              <Button variant="outline">Most Read</Button>
-              <Button variant="outline">By Category</Button>
-            </div>
+            <StoryFilters />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {stories.map((story, i) => (
+          {stories.length === 0 ? (
+            <div className="col-span-full text-center py-24">
+              <h3 className="font-serif text-2xl font-bold mb-4">No more stories yet -- check back soon</h3>
+              <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50" asChild>
+                <Link href="/stories">Back to Stories</Link>
+              </Button>
+            </div>
+          ) : (
+            stories.map((story, i) => (
               <Card key={i} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-[16/9] relative">
                   <Image src={story.image || "/placeholder.svg"} alt={story.title} fill className="object-cover" />
@@ -59,7 +64,8 @@ export default async function StoriesPage({ params }: { params: { page: string }
                   <div className="text-sm text-muted-foreground mt-4">{story.date}</div>
                 </div>
               </Card>
-            ))}
+            ))
+          )}
           </div>
 
           <div className="mt-12 text-center">
@@ -75,4 +81,3 @@ export default async function StoriesPage({ params }: { params: { page: string }
     </main>
   )
 }
-

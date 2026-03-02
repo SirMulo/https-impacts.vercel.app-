@@ -9,7 +9,19 @@ export default async function StoryPage({ params }: { params: { slug: string } }
   const story = await getStoryBySlug(params.slug)
 
   if (!story) {
-    return <div>Story not found</div>
+    return (
+      <main className="min-h-screen">
+        <div className="container py-24 text-center">
+          <h1 className="font-serif text-4xl font-bold mb-4">Story not found</h1>
+          <p className="text-muted-foreground mb-8">
+            The story you are looking for does not exist or may have been removed.
+          </p>
+          <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50" asChild>
+            <Link href="/stories">Back to Stories</Link>
+          </Button>
+        </div>
+      </main>
+    )
   }
 
   return (
@@ -45,4 +57,3 @@ export default async function StoryPage({ params }: { params: { slug: string } }
     </main>
   )
 }
-

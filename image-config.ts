@@ -9,4 +9,3 @@ export const images = {
     // Add other domains as needed
   ],
 }
-

@@ -48,13 +48,13 @@ export default function JoinTheFightPage() {
               title="Sign the Petition"
               description="Help us push for legislation that recognizes immigrant credentials and ensures fair employment opportunities."
               ctaText="Sign the Petition"
-              ctaHref="/petition"
+              ctaHref="/join-the-fight"
             />
             <ActionCard
               title="Donate to Support"
               description="Your donations help us fund programs that empower immigrants to access jobs, education, and opportunities in Norway."
               ctaText="Donate Now"
-              ctaHref="/donate"
+              ctaHref="/join-the-fight"
             />
             <ActionCard
               title="Share Your Story"
@@ -66,13 +66,13 @@ export default function JoinTheFightPage() {
               title="Volunteer"
               description="We need volunteers to help organize events, workshops, and advocacy campaigns. Lend your time and support the cause."
               ctaText="Sign Up to Volunteer"
-              ctaHref="/volunteer"
+              ctaHref="/join-the-fight"
             />
             <ActionCard
               title="Advocate on Social Media"
               description="Use your social media platforms to spread the message. Share our content and raise awareness about the issues facing skilled immigrants."
               ctaText="Share on Social Media"
-              ctaHref="#"
+              ctaHref="https://twitter.com/intent/tweet?text=Support+EthoLight"
             />
           </div>
         </div>
@@ -92,7 +92,9 @@ export default function JoinTheFightPage() {
                   <li>Social media post templates</li>
                   <li>Petition signing forms</li>
                 </ul>
-                <Button className="mt-4">Download Toolkit</Button>
+                <Button className="mt-4" asChild>
+                  <Link href="/join-the-fight">Download Toolkit</Link>
+                </Button>
               </CardContent>
             </Card>
             <Card>
@@ -133,4 +135,3 @@ export default function JoinTheFightPage() {
     </main>
   )
 }
-

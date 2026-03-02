@@ -32,4 +32,3 @@ export default function ResearchItem({ title, excerpt, author, date }: ResearchI
     </Card>
   )
 }
-

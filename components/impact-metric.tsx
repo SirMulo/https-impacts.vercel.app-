@@ -23,4 +23,3 @@ export default function ImpactMetric({ icon: Icon, number, label, image }: Impac
     </Card>
   )
 }
-
