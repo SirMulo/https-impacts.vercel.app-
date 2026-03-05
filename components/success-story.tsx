@@ -19,14 +19,14 @@ export default function SuccessStory({ image, title, quote, name, role }: Succes
       </div>
       <CardContent className="p-6">
         <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <blockquote className="italic mb-4">"{quote}"</blockquote>
+        <blockquote className="italic mb-4">{'"'}{quote}{'"'}</blockquote>
         <div className="flex justify-between items-center">
           <div>
             <p className="font-semibold">{name}</p>
             <p className="text-sm text-gray-600">{role}</p>
           </div>
           <Button variant="ghost">
-            Read Full Story
+            Les hele historien
             <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

@@ -12,16 +12,16 @@ export default function ResearchFilter() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Filter</Button>
+        <Button variant="outline">Filtrer</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Filter by Topic</DropdownMenuLabel>
+        <DropdownMenuLabel>Filtrer etter tema</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem checked>Labor Market Impact</DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem>Credential Recognition</DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem>Integration Policies</DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem checked>Arbeidsmarkedets innvirkning</DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem>Godkjenning av kompetanse</DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem>Integreringspolitikk</DropdownMenuCheckboxItem>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel>Filter by Year</DropdownMenuLabel>
+        <DropdownMenuLabel>Filtrer etter år</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem checked>2024</DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem checked>2023</DropdownMenuCheckboxItem>

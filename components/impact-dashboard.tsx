@@ -8,32 +8,32 @@ export default function ImpactDashboard() {
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <Card>
         <CardHeader>
-          <CardTitle>Petitions Signed</CardTitle>
+          <CardTitle>Underskrifter samlet</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-4xl font-bold mb-2">10,000+</div>
+          <div className="text-4xl font-bold mb-2">10 000+</div>
           <Progress value={78} className="w-full" />
-          <p className="mt-2 text-sm">78% of our petition supporters have been corporate leaders or HR managers.</p>
+          <p className="mt-2 text-sm">78 % av våre underskriftsstøttespillere har vært bedriftsledere eller HR-sjefer.</p>
         </CardContent>
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Donations Raised</CardTitle>
+          <CardTitle>Donasjoner samlet inn</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-4xl font-bold mb-2">€100,000+</div>
+          <div className="text-4xl font-bold mb-2">1 000 000+ kr</div>
           <Progress value={65} className="w-full" />
-          <p className="mt-2 text-sm">Over €100K raised for immigrant education programs this year.</p>
+          <p className="mt-2 text-sm">Over 1 million kroner samlet inn til utdanningsprogrammer for innvandrere i år.</p>
         </CardContent>
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Stories Shared</CardTitle>
+          <CardTitle>Historier delt</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-4xl font-bold mb-2">2,500+</div>
+          <div className="text-4xl font-bold mb-2">2 500+</div>
           <Progress value={83} className="w-full" />
-          <p className="mt-2 text-sm">83% of shared stories have been featured in national media.</p>
+          <p className="mt-2 text-sm">83 % av delte historier har blitt omtalt i nasjonale medier.</p>
         </CardContent>
       </Card>
     </div>

@@ -16,7 +16,7 @@ export default async function StoriesPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
-            alt="Featured story hero image"
+            alt="Fremhevet historie"
             fill
             priority
             className="object-cover"
@@ -25,17 +25,17 @@ export default async function StoriesPage() {
         </div>
         <div className="relative container">
           <div className="max-w-3xl space-y-6">
-            <Badge className="bg-orange-600 text-white hover:bg-orange-700">Featured Story</Badge>
+            <Badge className="bg-orange-600 text-white hover:bg-orange-700">Fremhevet historie</Badge>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              From CEO to Cleaner: Norway's Hidden Talent Crisis
+              Fra toppsjef til rengjører: Norges skjulte talentkrise
             </h1>
             <blockquote className="text-xl md:text-2xl text-white/90 border-l-4 border-orange-600 pl-6">
-              "I led a multinational corporation. Now I clean offices. This isn't just my story—it's the story of
-              thousands of skilled immigrants in Norway."
+              {'"'}Jeg ledet et multinasjonalt selskap. Nå vasker jeg kontorer. Dette er ikke bare min historie — det er
+              historien til tusenvis av kompetente innvandrere i Norge.{'"'}
             </blockquote>
             <Button size="lg" className="bg-orange-600 hover:bg-orange-700" asChild>
               <Link href="/stories/from-ceo-to-cleaner">
-                Read Full Story
+                Les hele historien
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -47,7 +47,7 @@ export default async function StoriesPage() {
         <Button variant="ghost" className="text-blue-600" asChild>
           <Link href="/">
             <ChevronLeft className="mr-2 h-4 w-4" />
-            Back to Home
+            Tilbake til forsiden
           </Link>
         </Button>
       </div>
@@ -56,8 +56,8 @@ export default async function StoriesPage() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
             <div>
-              <Badge className="bg-blue-600 text-white mb-4">All Stories</Badge>
-              <h2 className="font-serif text-3xl font-bold">Voices of Change</h2>
+              <Badge className="bg-blue-600 text-white mb-4">Alle historier</Badge>
+              <h2 className="font-serif text-3xl font-bold">Stemmer for endring</h2>
             </div>
             <StoryFilters />
           </div>
@@ -78,7 +78,7 @@ export default async function StoriesPage() {
                     </div>
                     <Button variant="ghost" className="text-blue-600" asChild>
                       <Link href={`/stories/${story.slug}`}>
-                        Read More
+                        Les mer
                         <ChevronRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -92,7 +92,7 @@ export default async function StoriesPage() {
           <div className="mt-12 text-center">
             <Button size="lg" variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50" asChild>
               <Link href="/stories/page/2">
-                Load More Stories
+                Last inn flere historier
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

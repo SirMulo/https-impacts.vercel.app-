@@ -25,7 +25,7 @@ export default function ResearchItem({ title, excerpt, author, date }: ResearchI
       </CardContent>
       <CardFooter className="mt-auto">
         <Button variant="ghost" className="ml-auto">
-          Read More
+          Les mer
           <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
       </CardFooter>

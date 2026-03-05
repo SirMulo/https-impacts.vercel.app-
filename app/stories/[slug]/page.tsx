@@ -12,12 +12,12 @@ export default async function StoryPage({ params }: { params: { slug: string } }
     return (
       <main className="min-h-screen">
         <div className="container py-24 text-center">
-          <h1 className="font-serif text-4xl font-bold mb-4">Story not found</h1>
+          <h1 className="font-serif text-4xl font-bold mb-4">Historien ble ikke funnet</h1>
           <p className="text-muted-foreground mb-8">
-            The story you are looking for does not exist or may have been removed.
+            Historien du leter etter finnes ikke eller har blitt fjernet.
           </p>
           <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50" asChild>
-            <Link href="/stories">Back to Stories</Link>
+            <Link href="/stories">Tilbake til historier</Link>
           </Button>
         </div>
       </main>
@@ -30,7 +30,7 @@ export default async function StoryPage({ params }: { params: { slug: string } }
         <Button variant="ghost" className="text-blue-600" asChild>
           <Link href="/stories">
             <ChevronLeft className="mr-2 h-4 w-4" />
-            Back to Stories
+            Tilbake til historier
           </Link>
         </Button>
       </div>
