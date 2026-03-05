@@ -149,14 +149,19 @@ export default function ImpactPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Våre partnere</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex items-center justify-center">
+            {[
+              { src: "/images/partner-nav.jpg", alt: "NAV - Arbeids- og velferdsetaten" },
+              { src: "/images/partner-nho.jpg", alt: "NHO - Næringslivets Hovedorganisasjon" },
+              { src: "/images/partner-nokut.jpg", alt: "NOKUT - Nasjonalt organ for kvalitet i utdanningen" },
+              { src: "/images/partner-imdi.jpg", alt: "IMDi - Integrerings- og mangfoldsdirektoratet" },
+            ].map((partner, i) => (
+              <div key={i} className="flex items-center justify-center bg-white rounded-lg p-4 shadow-sm">
                 <Image
-                  src={`/placeholder.svg?height=100&width=200&text=Partner+${i}`}
-                  alt={`Partner ${i}-logo`}
+                  src={partner.src}
+                  alt={partner.alt}
                   width={200}
                   height={100}
-                  className="object-contain"
+                  className="object-contain rounded"
                 />
               </div>
             ))}
