@@ -4,9 +4,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const filters = [
-  { key: "latest", label: "Latest" },
-  { key: "most-read", label: "Most Read" },
-  { key: "by-category", label: "By Category" },
+  { key: "latest", label: "Nyeste" },
+  { key: "most-read", label: "Mest lest" },
+  { key: "by-category", label: "Etter kategori" },
 ] as const
 
 type FilterKey = (typeof filters)[number]["key"]

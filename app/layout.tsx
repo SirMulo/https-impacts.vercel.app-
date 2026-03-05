@@ -9,29 +9,29 @@ import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.css"
 
 export const metadata: Metadata = {
-  title: "EthoLight — Advocating for Skilled Immigrants in Norway",
+  title: "EthoLight — For anerkjennelse av kompetente innvandrere i Norge",
   description:
-    "EthoLight challenges the systemic underemployment of highly educated immigrants in Norway through storytelling, research, and advocacy.",
+    "EthoLight utfordrer den systematiske undersysselsettingen av høyt utdannede innvandrere i Norge gjennom historiefortelling, forskning og påvirkning.",
   openGraph: {
-    title: "EthoLight — Advocating for Skilled Immigrants in Norway",
+    title: "EthoLight — For anerkjennelse av kompetente innvandrere i Norge",
     description:
-      "EthoLight challenges the systemic underemployment of highly educated immigrants in Norway through storytelling, research, and advocacy.",
+      "EthoLight utfordrer den systematiske undersysselsettingen av høyt utdannede innvandrere i Norge gjennom historiefortelling, forskning og påvirkning.",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 const quickLinks = [
-  { label: "Stories", href: "/stories" },
-  { label: "Research", href: "/research" },
-  { label: "Impact", href: "/impact" },
-  { label: "Join the Solution", href: "/join-the-fight" },
+  { label: "Historier", href: "/stories" },
+  { label: "Forskning", href: "/research" },
+  { label: "Innvirkning", href: "/impact" },
+  { label: "Bli med", href: "/join-the-fight" },
 ]
 
 const resourceLinks = [
-  { label: "About Us", href: "/" },
-  { label: "Contact", href: "mailto:hello@ethorise.no" },
-  { label: "Press", href: "/" },
-  { label: "Partners", href: "/impact" },
+  { label: "Om oss", href: "/" },
+  { label: "Kontakt", href: "mailto:hello@ethorise.no" },
+  { label: "Presse", href: "/" },
+  { label: "Partnere", href: "/impact" },
 ]
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="nb">
       <body className="flex flex-col min-h-screen">
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
@@ -49,51 +49,51 @@ export default function RootLayout({
             </Link>
             <nav className="hidden md:flex gap-6">
               <Link href="/stories" className="text-sm font-medium hover:text-blue-600">
-                Stories
+                Historier
               </Link>
               <Link href="/research" className="text-sm font-medium hover:text-blue-600">
-                Research
+                Forskning
               </Link>
               <Link href="/impact" className="text-sm font-medium hover:text-blue-600">
-                Impact
+                Innvirkning
               </Link>
               <Link href="/join-the-fight" className="text-sm font-medium hover:text-blue-600">
-                Join the Solution
+                Bli med i kampen
               </Link>
             </nav>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                   <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
+                  <span className="sr-only">Åpne meny</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
                 <nav className="flex flex-col gap-4">
                   <Link href="/stories" className="text-lg font-medium">
-                    Stories
+                    Historier
                   </Link>
                   <Link href="/research" className="text-lg font-medium">
-                    Research
+                    Forskning
                   </Link>
                   <Link href="/impact" className="text-lg font-medium">
-                    Impact
+                    Innvirkning
                   </Link>
                   <Link href="/join-the-fight" className="text-lg font-medium">
-                    Join the Solution
+                    Bli med i kampen
                   </Link>
                   <Link href="/share-your-story" className="text-lg font-medium">
-                    Share Your Story
+                    Del din historie
                   </Link>
                 </nav>
               </SheetContent>
             </Sheet>
             <div className="hidden md:flex items-center gap-4">
               <Button variant="ghost" asChild>
-                <Link href="/share-your-story">Share Your Story</Link>
+                <Link href="/share-your-story">Del din historie</Link>
               </Button>
               <Button className="bg-blue-600 hover:bg-blue-700" asChild>
-                <Link href="/join-the-fight">Join the Solution</Link>
+                <Link href="/join-the-fight">Bli med i kampen</Link>
               </Button>
             </div>
           </div>
@@ -107,12 +107,12 @@ export default function RootLayout({
                   <span className="font-serif text-2xl font-bold">EthoLight</span>
                 </Link>
                 <p className="text-slate-400 max-w-md">
-                  Fighting for recognition and justice for skilled immigrants in Norway. Join us in challenging the
-                  system and creating change.
+                  Vi kjemper for anerkjennelse og rettferdighet for kompetente innvandrere i Norge. Bli med oss i kampen
+                  for å utfordre systemet og skape endring.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold mb-4">Quick Links</h3>
+                <h3 className="font-bold mb-4">Hurtiglenker</h3>
                 <ul className="space-y-2">
                   {quickLinks.map((link, j) => (
                     <li key={j}>
@@ -124,7 +124,7 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold mb-4">Resources</h3>
+                <h3 className="font-bold mb-4">Ressurser</h3>
                 <ul className="space-y-2">
                   {resourceLinks.map((link, j) => (
                     <li key={j}>
@@ -139,13 +139,13 @@ export default function RootLayout({
           </div>
           <div className="border-t border-slate-800">
             <div className="container flex flex-col sm:flex-row justify-between items-center py-6">
-              <p className="text-slate-400">© {new Date().getFullYear()} EthoLight. All rights reserved.</p>
+              <p className="text-slate-400">© {new Date().getFullYear()} EthoLight. Alle rettigheter reservert.</p>
               <div className="flex gap-4 mt-4 sm:mt-0">
                 <Link href="/" className="text-slate-400 hover:text-white">
-                  Privacy
+                  Personvern
                 </Link>
                 <Link href="/" className="text-slate-400 hover:text-white">
-                  Terms
+                  Vilkår
                 </Link>
               </div>
             </div>

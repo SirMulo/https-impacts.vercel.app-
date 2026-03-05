@@ -17,18 +17,17 @@ export default function NewsletterSignup() {
     setError("")
 
     if (!email.trim()) {
-      setError("Please enter your email")
+      setError("Vennligst skriv inn e-postadressen din")
       return
     }
 
     setIsLoading(true)
 
-    // Simulate a short network delay
     await new Promise((resolve) => setTimeout(resolve, 800))
 
     toast({
-      title: "Thank you for subscribing!",
-      description: "You'll receive the latest stories, career insights, and advocacy updates in your inbox.",
+      title: "Takk for at du abonnerer!",
+      description: "Du vil motta de siste historiene, karriereinnsikt og påvirkningsoppdateringer i innboksen din.",
     })
 
     setEmail("")
@@ -40,7 +39,7 @@ export default function NewsletterSignup() {
       <div className="flex flex-col sm:flex-row gap-4">
         <Input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Skriv inn e-postadressen din"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value)
@@ -48,7 +47,7 @@ export default function NewsletterSignup() {
           }}
         />
         <Button type="submit" disabled={isLoading}>
-          {isLoading ? "Subscribing..." : "Subscribe to Newsletter"}
+          {isLoading ? "Abonnerer..." : "Abonner på nyhetsbrevet"}
         </Button>
       </div>
       {error && <p className="text-sm text-red-500">{error}</p>}

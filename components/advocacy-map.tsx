@@ -15,51 +15,51 @@ const campaigns = [
   {
     name: "Oslo",
     coordinates: [10.7522, 59.9139] as [number, number],
-    campaign: "Credential Recognition Reform",
+    campaign: "Reform av godkjenning av kompetanse",
     supporters: 1240,
-    status: "Active",
+    status: "Aktiv",
   },
   {
     name: "Bergen",
     coordinates: [5.3221, 60.3913] as [number, number],
-    campaign: "Diversity Hiring Initiative",
+    campaign: "Mangfoldig ansettelsesinitiativ",
     supporters: 860,
-    status: "Active",
+    status: "Aktiv",
   },
   {
     name: "Trondheim",
     coordinates: [10.3951, 63.4305] as [number, number],
-    campaign: "Immigrant Mentorship Network",
+    campaign: "Mentornettverk for innvandrere",
     supporters: 520,
-    status: "Active",
+    status: "Aktiv",
   },
   {
     name: "Stavanger",
     coordinates: [5.7331, 58.9700] as [number, number],
-    campaign: "Skills Assessment Fast-Track",
+    campaign: "Hurtigspor for kompetansevurdering",
     supporters: 390,
-    status: "Active",
+    status: "Aktiv",
   },
   {
     name: "Tromsø",
     coordinates: [18.9551, 69.6496] as [number, number],
-    campaign: "Northern Norway Integration Program",
+    campaign: "Integreringsprogram for Nord-Norge",
     supporters: 210,
-    status: "Upcoming",
+    status: "Kommende",
   },
   {
     name: "Drammen",
     coordinates: [10.2039, 59.7441] as [number, number],
-    campaign: "Community Employment Hub",
+    campaign: "Lokalt sysselsettingssenter",
     supporters: 310,
-    status: "Active",
+    status: "Aktiv",
   },
   {
     name: "Kristiansand",
     coordinates: [7.9956, 58.1462] as [number, number],
-    campaign: "Southern Region Advocacy Coalition",
+    campaign: "Påvirkningskoalisjon for Sørlandet",
     supporters: 270,
-    status: "Upcoming",
+    status: "Kommende",
   },
 ]
 
@@ -115,22 +115,19 @@ export default function AdvocacyMap() {
                 onMouseEnter={() => setActiveMarker(name)}
                 onMouseLeave={() => setActiveMarker(null)}
               >
-                {/* Pulse ring */}
                 <circle
-                  r={status === "Active" ? 10 : 7}
-                  fill={status === "Active" ? "rgba(234, 88, 12, 0.2)" : "rgba(37, 99, 235, 0.2)"}
-                  className={status === "Active" ? "animate-ping" : ""}
+                  r={status === "Aktiv" ? 10 : 7}
+                  fill={status === "Aktiv" ? "rgba(234, 88, 12, 0.2)" : "rgba(37, 99, 235, 0.2)"}
+                  className={status === "Aktiv" ? "animate-ping" : ""}
                   style={{ animationDuration: "2s" }}
                 />
-                {/* Solid dot */}
                 <circle
                   r={6}
-                  fill={status === "Active" ? "#EA580C" : "#2563EB"}
+                  fill={status === "Aktiv" ? "#EA580C" : "#2563EB"}
                   stroke="#fff"
                   strokeWidth={2}
                   cursor="pointer"
                 />
-                {/* Label */}
                 <text
                   textAnchor="middle"
                   y={-14}
@@ -149,7 +146,6 @@ export default function AdvocacyMap() {
         </ComposableMap>
       </div>
 
-      {/* Tooltip */}
       {activeMarker && (
         <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg border border-slate-200 p-4 max-w-[220px] z-10">
           {campaigns
@@ -160,7 +156,7 @@ export default function AdvocacyMap() {
                   <span
                     className="inline-block w-2.5 h-2.5 rounded-full"
                     style={{
-                      backgroundColor: c.status === "Active" ? "#EA580C" : "#2563EB",
+                      backgroundColor: c.status === "Aktiv" ? "#EA580C" : "#2563EB",
                     }}
                   />
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -169,21 +165,20 @@ export default function AdvocacyMap() {
                 </div>
                 <h4 className="font-bold text-sm text-slate-900 mb-1">{c.campaign}</h4>
                 <p className="text-xs text-slate-600">{c.name}</p>
-                <p className="text-xs text-slate-500 mt-1">{c.supporters.toLocaleString()} supporters</p>
+                <p className="text-xs text-slate-500 mt-1">{c.supporters.toLocaleString("nb-NO")} støttespillere</p>
               </div>
             ))}
         </div>
       )}
 
-      {/* Legend */}
       <div className="flex items-center gap-6 mt-4 text-sm text-slate-600">
         <div className="flex items-center gap-2">
           <span className="inline-block w-3 h-3 rounded-full bg-orange-600" />
-          Active Campaign
+          Aktiv kampanje
         </div>
         <div className="flex items-center gap-2">
           <span className="inline-block w-3 h-3 rounded-full bg-blue-600" />
-          Upcoming Campaign
+          Kommende kampanje
         </div>
       </div>
     </div>

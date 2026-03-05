@@ -10,7 +10,7 @@ export default function ScrollToFormButton() {
 
   return (
     <Button size="lg" className="bg-orange-600 hover:bg-orange-700" onClick={handleClick}>
-      Start Sharing Your Story
+      Begynn å dele din historie
       <ArrowRight className="ml-2 h-5 w-5" />
     </Button>
   )

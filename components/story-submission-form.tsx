@@ -16,20 +16,20 @@ const formSchema = z.object({
   name: z
     .string()
     .min(2, {
-      message: "Name must be at least 2 characters.",
+      message: "Navnet må inneholde minst 2 tegn.",
     })
     .optional(),
   countryOfOrigin: z.string().min(2, {
-    message: "Country of origin must be at least 2 characters.",
+    message: "Opprinnelsesland må inneholde minst 2 tegn.",
   }),
   currentJob: z.string().min(2, {
-    message: "Current job must be at least 2 characters.",
+    message: "Nåværende jobb må inneholde minst 2 tegn.",
   }),
   previousProfession: z.string().min(2, {
-    message: "Previous profession must be at least 2 characters.",
+    message: "Tidligere yrke må inneholde minst 2 tegn.",
   }),
   story: z.string().min(50, {
-    message: "Your story must be at least 50 characters.",
+    message: "Historien din må inneholde minst 50 tegn.",
   }),
   isAnonymous: z.boolean().default(false),
 })
@@ -52,9 +52,9 @@ export default function StorySubmissionForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     toast({
-      title: "Thank you -- your story has been received",
+      title: "Takk — din historie er mottatt",
       description:
-        "Your story will be reviewed and published to help raise awareness and inspire others.",
+        "Din historie vil bli gjennomgått og publisert for å bidra til å øke bevisstheten og inspirere andre.",
     })
     form.reset()
     setIsSubmitted(true)
@@ -66,9 +66,9 @@ export default function StorySubmissionForm() {
   if (isSubmitted) {
     return (
       <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Thank You for Sharing Your Story!</h2>
-        <p className="mb-6">Your voice will help drive change and inspire others facing similar challenges.</p>
-        <Button onClick={() => router.push("/")}>Return to Home</Button>
+        <h2 className="text-2xl font-bold mb-4">Takk for at du delte din historie!</h2>
+        <p className="mb-6">Din stemme vil bidra til å drive endring og inspirere andre som står overfor lignende utfordringer.</p>
+        <Button onClick={() => router.push("/")}>Tilbake til forsiden</Button>
       </div>
     )
   }
@@ -81,11 +81,11 @@ export default function StorySubmissionForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name (Optional)</FormLabel>
+              <FormLabel>Navn (valgfritt)</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input placeholder="Ditt navn" {...field} />
               </FormControl>
-              <FormDescription>You can choose to remain anonymous by leaving this field blank.</FormDescription>
+              <FormDescription>Du kan velge å forbli anonym ved å la dette feltet stå tomt.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -95,9 +95,9 @@ export default function StorySubmissionForm() {
           name="countryOfOrigin"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Country of Origin</FormLabel>
+              <FormLabel>Opprinnelsesland</FormLabel>
               <FormControl>
-                <Input placeholder="Your country of origin" {...field} />
+                <Input placeholder="Ditt opprinnelsesland" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -108,9 +108,9 @@ export default function StorySubmissionForm() {
           name="currentJob"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Current Job</FormLabel>
+              <FormLabel>Nåværende jobb</FormLabel>
               <FormControl>
-                <Input placeholder="Your current job" {...field} />
+                <Input placeholder="Din nåværende jobb" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -121,9 +121,9 @@ export default function StorySubmissionForm() {
           name="previousProfession"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Previous Profession/Qualification</FormLabel>
+              <FormLabel>Tidligere yrke/kvalifikasjon</FormLabel>
               <FormControl>
-                <Input placeholder="e.g., Doctor, Engineer, etc." {...field} />
+                <Input placeholder="F.eks. lege, ingeniør, osv." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -134,10 +134,10 @@ export default function StorySubmissionForm() {
           name="story"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your Story</FormLabel>
+              <FormLabel>Din historie</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Share your experience with underemployment in Norway, how it has affected your life, and any positive outcomes or actions that helped you."
+                  placeholder="Del din opplevelse med undersysselsetting i Norge, hvordan det har påvirket livet ditt, og eventuelle positive resultater eller tiltak som har hjulpet deg."
                   className="min-h-[200px]"
                   {...field}
                 />
@@ -155,15 +155,15 @@ export default function StorySubmissionForm() {
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>Keep my story anonymous</FormLabel>
+                <FormLabel>Hold min historie anonym</FormLabel>
                 <FormDescription>
-                  Check this box if you want to share your story without revealing your identity.
+                  Kryss av i denne boksen hvis du ønsker å dele historien din uten å avsløre identiteten din.
                 </FormDescription>
               </div>
             </FormItem>
           )}
         />
-        <Button type="submit">Submit Your Story</Button>
+        <Button type="submit">Send inn din historie</Button>
       </form>
     </Form>
   )
