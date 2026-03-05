@@ -13,8 +13,8 @@ export default function JoinTheFightPage() {
     <main className="min-h-screen">
       <section className="relative min-h-[70vh] flex items-center">
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=Diverse+Group+of+Skilled+Immigrants"
-          alt="Diverse group of skilled immigrants united in their fight for recognition"
+          src="/images/community-together.jpg"
+          alt="A diverse community of families, children, and professionals coming together in unity with rays of warm sunlight"
           fill
           className="object-cover"
           priority
